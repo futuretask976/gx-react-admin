@@ -36,47 +36,54 @@ const SearchPage = () => {
                     <Layout>
                         <Content style={{ margin: '5px 5px', borderRadius: 15, border: '1px solid red' }}>
                             <BreadcrumbBlock />
-                            <Row gutter={[16, 24]} style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>
-                                <Col className="gutter-row" span={3}>
+                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>&nbsp;</Row>
+                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>
+                                <Col className="gutter-row" span={2}>
                                     <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>地址：</span></div>
                                 </Col>
-                                <Col className="gutter-row" span={5}>
-                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="地址" /></div>
+                                <Col className="gutter-row" span={4}>
+                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="地址" />&nbsp;&nbsp;</div>
                                 </Col>
-                                <Col className="gutter-row" span={3}>
+                                <Col className="gutter-row" span={2}>
                                     <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>名称：</span></div>
                                 </Col>
-                                <Col className="gutter-row" span={5}>
-                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="名称" /></div>
+                                <Col className="gutter-row" span={4}>
+                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="名称" />&nbsp;&nbsp;</div>
                                 </Col>
-                                <Col className="gutter-row" span={3}>
+                                <Col className="gutter-row" span={2}>
                                     <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>关键字：</span></div>
                                 </Col>
-                                <Col className="gutter-row" span={5}>
-                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="关键字" /></div>
+                                <Col className="gutter-row" span={4}>
+                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="关键字" />&nbsp;&nbsp;</div>
                                 </Col>
-                                <Col className="gutter-row" span={3}>
+                                <Col className="gutter-row" span={2}>
                                     <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>是否选中：</span></div>
                                 </Col>
-                                <Col className="gutter-row" span={5}>
-                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="是否选中" /></div>
-                                </Col>
-                                <Col className="gutter-row" span={3}>
-                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>性别：</span></div>
-                                </Col>
-                                <Col className="gutter-row" span={5}>
-                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="性别" /></div>
-                                </Col>
-                                <Col className="gutter-row" span={3}>
-                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>时间范围：</span></div>
-                                </Col>
-                                <Col className="gutter-row" span={5}>
-                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><RangePicker /></div>
-                                </Col>
-                                <Col className="gutter-row" span={24}>
-                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><Button type="primary" icon={<SearchOutlined />}>Search</Button></div>
+                                <Col className="gutter-row" span={4}>
+                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="是否选中" />&nbsp;&nbsp;</div>
                                 </Col>
                             </Row>
+                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>&nbsp;</Row>
+                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>
+                                <Col className="gutter-row" span={2}>
+                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>性别：</span></div>
+                                </Col>
+                                <Col className="gutter-row" span={4}>
+                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="性别" />&nbsp;&nbsp;</div>
+                                </Col>
+                                <Col className="gutter-row" span={2}>
+                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>时间范围：</span></div>
+                                </Col>
+                                <Col className="gutter-row" span={4}>
+                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><RangePicker />&nbsp;&nbsp;</div>
+                                </Col>
+                            </Row>
+                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>
+                                <Col className="gutter-row" span={24}>
+                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><Button type="primary" icon={<SearchOutlined />}>Search</Button>&nbsp;&nbsp;</div>
+                                </Col>
+                            </Row>
+                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>&nbsp;</Row>
                             <div>&nbsp;</div>
                             <SearchTableBlock />
                         </Content>
