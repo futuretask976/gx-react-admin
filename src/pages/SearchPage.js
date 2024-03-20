@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button, Input, Layout, Flex, Col, Row, Tooltip } from 'antd';
+import { DatePicker, Space, Button, Input, Layout, Flex, Col, Row, Tooltip } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
 import HeaderBar from '../components/HeaderBar'
@@ -15,6 +15,8 @@ import LineChart from '../components/LineChart'
 
 
 const { Content } = Layout;
+
+const { RangePicker } = DatePicker;
 
 const layoutStyle = {
     borderRadius: 5,
@@ -66,10 +68,10 @@ const SearchPage = () => {
                                     <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="性别" /></div>
                                 </Col>
                                 <Col className="gutter-row" span={3}>
-                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>标题：</span></div>
+                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>时间范围：</span></div>
                                 </Col>
                                 <Col className="gutter-row" span={5}>
-                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="标题" /></div>
+                                    <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><RangePicker /></div>
                                 </Col>
                                 <Col className="gutter-row" span={24}>
                                     <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><Button type="primary" icon={<SearchOutlined />}>Search</Button></div>
