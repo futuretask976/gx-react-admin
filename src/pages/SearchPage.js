@@ -31,10 +31,10 @@ const SearchPage = () => {
         <Flex gap="middle" justify="center" wrap="wrap">
             <Layout style={layoutStyle}>
                 <HeaderBar />
-                <Layout style={{ borderRadius: 15, border: '1px solid blue' }}>
+                <Layout style={{ borderRadius: 15, border: '0px solid blue' }}>
                     <SiderMenu />
                     <Layout>
-                        <Content style={{ margin: '5px 5px', borderRadius: 15, border: '1px solid red' }}>
+                        <Content style={{ margin: '5px 5px', borderRadius: 15, border: '0px solid red' }}>
                             <BreadcrumbBlock />
                             <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>&nbsp;</Row>
                             <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>
