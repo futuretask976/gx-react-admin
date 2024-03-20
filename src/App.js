@@ -3,6 +3,8 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { Outlet, RouterProvider, Navigate, createBrowserRouter } from 'react-router-dom';
 
 import IndexPage from './pages/IndexPage';
+import InputPage from './pages/InputPage';
+import SearchPage from './pages/SearchPage';
 
 const AuthContext = createContext();
 
@@ -55,6 +57,14 @@ const Routes = () => {
                 {
                     path: "/index",
                     element: <IndexPage />,
+                },
+                {
+                    path: "/input",
+                    element: <InputPage />,
+                },
+                {
+                    path: "/search",
+                    element: <SearchPage />,
                 }
             ]
         }

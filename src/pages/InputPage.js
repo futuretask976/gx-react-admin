@@ -2,15 +2,14 @@ import React from 'react';
 
 import { Layout, Flex, Col, Row } from 'antd';
 
-import HeaderBar from '../components/HeaderBar'
-import SiderMenu from '../components/SiderMenu'
 import BreadcrumbBlock from "../components/BreadcrumbBlock"
-import FooterBar from '../components/FooterBar'
-
 import ColumnChart from '../components/ColumnChart'
+import FooterBar from '../components/FooterBar'
+import HeaderBar from '../components/HeaderBar'
 import IndexTableBlock from '../components/IndexTableBlock'
 import IndexListBlock from '../components/IndexListBlock'
 import LineChart from '../components/LineChart'
+import SiderMenu from '../components/SiderMenu'
 
 const { Content } = Layout;
 
@@ -22,7 +21,7 @@ const layoutStyle = {
     justifyContent: 'center',
 };
 
-const IndexPage = () => {
+const InputPage = () => {
     return (
         <Flex gap="middle" justify="center" wrap="wrap">
             <Layout style={layoutStyle}>
@@ -67,4 +66,4 @@ const IndexPage = () => {
     )
 };
 
-export default IndexPage;
+export default InputPage;

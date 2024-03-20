@@ -8,21 +8,21 @@ const HeaderBar = () => {
     let { Header } = Layout;
 
     let headerStyle = {
-        alignItems: 'center',
         backgroundColor: '#fff',
-        border: '1px solid green',
-        color: 'red',
-        fontSize: '80px',
-        height: 120,
-        justifyContent: 'center',
-        paddingInline: 15,
-        textAlign: 'left',
+        border: '0px solid green',
+        color: '#575757',
+        height: 150,
+        paddingInline: 0
     };
 
     return (
         <Header style={headerStyle}>
-            {/* <Image height={120} src={logo} style={{justifyContent: 'center'}} /> */}
-            <div style={{height: '100%', width: '100%', border: '1px solid yellow', justifyContent: 'center'}}><span>发布检查报表</span></div>
+            {/* <Image height={170} src={logo} style={{}} /> */}
+            <div style={{alignItems: 'center', display: 'flex', height: 150, width: '100%', border: '0px solid yellow'}}>
+                <Image height={120} src={logo} style={{}} />
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <span style={{fontSize: 50}}>发布检查报表</span>
+            </div>
         </Header>
     )
 };
