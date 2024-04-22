@@ -25,8 +25,8 @@ const SiderMenu = () => {
             getItem('表单配置', '4'),
             getItem('场景', '5'),
         ]),
-        getItem('团队', 'sub2', <TeamOutlined />, [getItem('开发团队', '6'), getItem('运营团队', '8')]),
-        getItem('文件', '9', <FileOutlined />),
+        getItem('团队', 'sub2', <TeamOutlined />, [getItem('开发团队', '6'), getItem('运营团队', '7')]),
+        getItem('文件', '8', <FileOutlined />),
     ];
 
     let siderStyle = {
@@ -38,10 +38,32 @@ const SiderMenu = () => {
         paddingInline: 0,
     };
 
+    const onMenuItemClick = (e) => {
+        alert('click: ' + e.key);
+        console.log('click', e);
+        if (e.key == 1) {
+            window.location.href="/admin/index";
+        } else if (e.key == 2) {
+            window.location.href="/admin/index";
+        } else if (e.key == 3) {
+            window.location.href="/admin/input";
+        } else if (e.key == 4) {
+            window.location.href="/admin/search";
+        } else if (e.key == 5) {
+            window.location.href="/admin/input";
+        } else if (e.key == 6) {
+            window.location.href="/admin/input";
+        } else if (e.key == 7) {
+            window.location.href="/admin/input";
+        } else if (e.key == 8) {
+            window.location.href="/admin/input";
+        }
+    };
+
     return (
         <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} style={siderStyle} width="200">
             {/* <div className="demo-logo-vertical" /> */}
-            <Menu theme="light" defaultSelectedKeys={['1']} mode="inline" items={menuItems} />
+            <Menu theme="light" defaultSelectedKeys={['1']} mode="inline" items={menuItems} onClick={onMenuItemClick} />
         </Sider>
     )
 };

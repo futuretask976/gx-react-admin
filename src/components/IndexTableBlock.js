@@ -2,7 +2,14 @@ import React, { useEffect, useState } from 'react';
 
 import { theme, Space, Table, Tag } from 'antd';
 
+
+
 const IndexTableBlock = () => {
+    const onTitleItemClick = (e) => {
+        alert('click: ' + e.key);
+        console.log('click', e);
+    };
+
     let {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();

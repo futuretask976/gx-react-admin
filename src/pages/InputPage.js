@@ -2,14 +2,15 @@ import React from 'react';
 
 import { Layout, Flex, Col, Row } from 'antd';
 
-import BreadcrumbBlock from "../components/BreadcrumbBlock"
-import ColumnChart from '../components/ColumnChart'
-import FooterBar from '../components/FooterBar'
 import HeaderBar from '../components/HeaderBar'
+import SiderMenu from '../components/SiderMenu'
+import InputBreadcrumbBlock from "../components/InputBreadcrumbBlock"
+import FooterBar from '../components/FooterBar'
+
+import ColumnChart from '../components/ColumnChart'
 import IndexTableBlock from '../components/IndexTableBlock'
 import IndexListBlock from '../components/IndexListBlock'
 import LineChart from '../components/LineChart'
-import SiderMenu from '../components/SiderMenu'
 
 const { Content } = Layout;
 
@@ -30,7 +31,7 @@ const InputPage = () => {
                     <SiderMenu />
                     <Layout>
                         <Content style={{ margin: '5px 5px', borderRadius: 15, border: '1px solid red' }}>
-                            <BreadcrumbBlock />
+                            <InputBreadcrumbBlock />
                             <LineChart />
                             &nbsp;
                             <ColumnChart />
