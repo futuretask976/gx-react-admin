@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { theme, Button, DatePicker, Grid, Image, Input, Modal, Space, Table, Tag, Tooltip, Col, Row } from 'antd';
 
-import { theme, Button, Grid, Modal, Space, Table, Tag, Col, Row } from 'antd';
+import portrait from '../images/portrait.jpg'
+
+const { TextArea } = Input;
 
 const IndexTableBlock = () => {
     const [loading, setLoading] = useState(false);
@@ -142,8 +145,8 @@ const IndexTableBlock = () => {
                 onOk={handleOk}
                 onCancel={handleCancel}
                 style={{alignItems: 'center', display: 'flex', flexDirection: 'row', border: '1px solid red'}}
-                height={800}
-                width={800}
+                height={500}
+                width={600}
                 footer={[
                     <Button key="back" onClick={handleCancel}>
                         Return
@@ -162,20 +165,36 @@ const IndexTableBlock = () => {
                     </Button>,
                 ]}
             >
-                <Row>
-                    <Col span={24}>col</Col>
-                </Row>
-                <Row>
-                    <Col span={12}>col-12</Col>
-                    <Col span={12}>col-12</Col>
-                </Row>
-                <Row>
-                    <Col span={8}>col-8</Col>
-                    <Col span={8}>col-8</Col>
-                    <Col span={8}>col-8</Col>
-                </Row>
-                <div style={{alignItems: 'center', display: 'flex', flexDirection: 'row', height: 800, width: 800, border: '1px solid yellow'}}>
-                    aaaaaa
+                <div style={{alignItems: 'center', display: 'flex', flexDirection: 'row', height: 500, width: 600, border: '1px solid yellow'}}>
+                    <Row>
+                        <Col span={12}>
+                            <div>
+                                <Row>
+                                    <Col span={6}>地址：</Col>
+                                    <Col span={18}><Input placeholder="地址" /></Col>
+                                </Row>
+                                <Row>
+                                    <Col span={6}>地址：</Col>
+                                    <Col span={18}><Input placeholder="地址" /></Col>
+                                </Row>
+                                <Row>
+                                    <Col span={6}>地址：</Col>
+                                    <Col span={18}><Input placeholder="地址" /></Col>
+                                </Row>
+                                <Row>
+                                    <Col span={24}>详细介绍：</Col>
+                                </Row>
+                                <Row>
+                                    <Col span={24}>
+                                        <TextArea rows={15} placeholder="maxLength is 1200" maxLength={1200} />
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Col>
+                        <Col span={12}>
+                            <Image height={500} width={250} src={portrait} />
+                        </Col>
+                    </Row>
                 </div>
             </Modal>
         </>
