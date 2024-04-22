@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-import { theme, Space, Table, Tag } from 'antd';
+import { theme, Button, Space, Table, Tag } from 'antd';
 
 
 
 const IndexTableBlock = () => {
-    const onTitleItemClick = (e) => {
-        alert('click: ' + e.key);
-        console.log('click', e);
+    const onTitleClick = (e) => {
+        console.log('onTitleClick', e);
+    };
+
+    const onDeleteClick = (e) => {
+        alert(e);
+        console.log('onDeleteClick', e);
     };
 
     let {
@@ -19,7 +23,9 @@ const IndexTableBlock = () => {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
-            render: (text) => <a>{text}</a>,
+            render: (_, record) => (
+                <Button type='link' onClick={() => onTitleClick(record.name)}>{record.name}</Button>
+            ),
         },
         {
             title: 'Age',
@@ -56,8 +62,8 @@ const IndexTableBlock = () => {
             key: 'action',
             render: (_, record) => (
                 <Space size="middle">
-                <a>Invite {record.name}</a>
-                <a>Delete</a>
+                    <a>Invite {record.name}</a>
+                    <a onClick={() => onDeleteClick(record.name)}>Delete</a>
                 </Space>
             ),
         },
@@ -93,14 +99,14 @@ const IndexTableBlock = () => {
             tags: ['cool', 'teacher'],
         },
         {
-            key: '4',
+            key: '5',
             name: 'John',
             age: 32,
             address: 'Sydney No. 1 Lake Park',
             tags: ['cool', 'teacher'],
         },
         {
-            key: '4',
+            key: '6',
             name: 'Jack',
             age: 32,
             address: 'Sydney No. 1 Lake Park',
@@ -110,7 +116,6 @@ const IndexTableBlock = () => {
 
     return (
         <div style={{ padding: 24, minHeight: 500, background: colorBgContainer, borderRadius: borderRadiusLG }}>
-            Bill is a cat.
             <Table columns={columns} dataSource={data} />
         </div>
     )

@@ -31,7 +31,7 @@ const HeaderBar = () => {
                 </div>
                 <div style={{border: '1px solid pink', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', height: 100}}>
                     <div style={{border: '1px solid pink', height: 80}}>
-                        <Image height={80} width  src={loginHeader} />
+                        <Image height={80}  src={loginHeader} />
                     </div>
                     <div style={{border: '1px solid black', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', height: 20}}>登出</div>
                 </div>
