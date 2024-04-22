@@ -1,17 +1,33 @@
 import React, { useEffect, useState } from 'react';
 
-import { theme, Button, Space, Table, Tag } from 'antd';
-
-
+import { theme, Button, Grid, Modal, Space, Table, Tag, Col, Row } from 'antd';
 
 const IndexTableBlock = () => {
+    const [loading, setLoading] = useState(false);
+    const [open, setOpen] = useState(false);
+
     const onTitleClick = (e) => {
         console.log('onTitleClick', e);
+        showTitleModal();
     };
 
     const onDeleteClick = (e) => {
         alert(e);
         console.log('onDeleteClick', e);
+    };
+
+    const showTitleModal = () => {
+        setOpen(true);
+    };
+    const handleOk = () => {
+        setLoading(true);
+        setTimeout(() => {
+          setLoading(false);
+          setOpen(false);
+        }, 3000);
+    };
+    const handleCancel = () => {
+        setOpen(false);
     };
 
     let {
@@ -115,9 +131,54 @@ const IndexTableBlock = () => {
     ];
 
     return (
-        <div style={{ padding: 24, minHeight: 500, background: colorBgContainer, borderRadius: borderRadiusLG }}>
-            <Table columns={columns} dataSource={data} />
-        </div>
+        <>
+            <div style={{ padding: 24, minHeight: 500, background: colorBgContainer, borderRadius: borderRadiusLG }}>
+                <Table columns={columns} dataSource={data} />
+            </div>
+
+            <Modal
+                open={open}
+                title="Title Detail Dialog"
+                onOk={handleOk}
+                onCancel={handleCancel}
+                style={{alignItems: 'center', display: 'flex', flexDirection: 'row', border: '1px solid red'}}
+                height={800}
+                width={800}
+                footer={[
+                    <Button key="back" onClick={handleCancel}>
+                        Return
+                    </Button>,
+                    <Button key="submit" type="primary" loading={loading} onClick={handleOk}>
+                        Submit
+                    </Button>,
+                    <Button
+                        key="link"
+                        href="https://google.com"
+                        type="primary"
+                        loading={loading}
+                        onClick={handleOk}
+                    >
+                        Search on Google
+                    </Button>,
+                ]}
+            >
+                <Row>
+                    <Col span={24}>col</Col>
+                </Row>
+                <Row>
+                    <Col span={12}>col-12</Col>
+                    <Col span={12}>col-12</Col>
+                </Row>
+                <Row>
+                    <Col span={8}>col-8</Col>
+                    <Col span={8}>col-8</Col>
+                    <Col span={8}>col-8</Col>
+                </Row>
+                <div style={{alignItems: 'center', display: 'flex', flexDirection: 'row', height: 800, width: 800, border: '1px solid yellow'}}>
+                    aaaaaa
+                </div>
+            </Modal>
+        </>
     )
 };
 
