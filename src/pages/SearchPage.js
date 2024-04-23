@@ -7,12 +7,9 @@ import HeaderBar from '../components/HeaderBar'
 import SiderMenu from '../components/SiderMenu'
 import BreadcrumbBlock from "../components/BreadcrumbBlock"
 import FooterBar from '../components/FooterBar'
-
 import SearchTableBlock from '../components/SearchTableBlock'
 
-
 const { Content } = Layout;
-
 const { RangePicker } = DatePicker;
 
 const layoutStyle = {
