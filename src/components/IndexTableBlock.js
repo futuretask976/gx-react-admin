@@ -141,12 +141,12 @@ const IndexTableBlock = () => {
 
             <Modal
                 open={open}
-                title="Title Detail Dialog"
+                title="用户详细情况"
                 onOk={handleOk}
                 onCancel={handleCancel}
-                style={{alignItems: 'center', display: 'flex', flexDirection: 'row', border: '1px solid red'}}
-                height={500}
-                width={600}
+                style={{display: 'flex', alignItems: 'center', flexDirection: 'row', border: '0px solid red'}}
+                height={525}
+                width={625}
                 footer={[
                     <Button key="back" onClick={handleCancel}>
                         Return
@@ -165,33 +165,33 @@ const IndexTableBlock = () => {
                     </Button>,
                 ]}
             >
-                <div style={{alignItems: 'center', display: 'flex', flexDirection: 'row', height: 500, width: 600, border: '1px solid yellow'}}>
-                    <Row>
-                        <Col span={12}>
+                <div style={{display: 'flex', alignItems: 'center', flexDirection: 'row', height: 500, width: 600, border: '0px solid yellow'}}>
+                    <Row style={{height: 500, width: 600, border: '0px solid black'}}>
+                        <Col span={14}>
                             <div>
                                 <Row>
-                                    <Col span={6}>地址：</Col>
-                                    <Col span={18}><Input placeholder="地址" /></Col>
+                                    <Col span={5} style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: 5}}>姓名：</Col>
+                                    <Col span={19} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 5}}><Input placeholder="姓名，例如文一西路西溪泊岸3幢731室" /></Col>
                                 </Row>
                                 <Row>
-                                    <Col span={6}>地址：</Col>
-                                    <Col span={18}><Input placeholder="地址" /></Col>
+                                    <Col span={5} style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: 5}}>性别：</Col>
+                                    <Col span={19} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 5}}><Input placeholder="性别，例如男或者女" /></Col>
                                 </Row>
                                 <Row>
-                                    <Col span={6}>地址：</Col>
-                                    <Col span={18}><Input placeholder="地址" /></Col>
+                                    <Col span={5} style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: 5}}>身高：</Col>
+                                    <Col span={19} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 5}}><Input placeholder="身高，例如183cm" /></Col>
                                 </Row>
                                 <Row>
-                                    <Col span={24}>详细介绍：</Col>
+                                    <Col span={24} style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: 5}}>详细介绍：</Col>
                                 </Row>
                                 <Row>
-                                    <Col span={24}>
+                                    <Col span={24} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 5}}>
                                         <TextArea rows={15} placeholder="maxLength is 1200" maxLength={1200} />
                                     </Col>
                                 </Row>
                             </div>
                         </Col>
-                        <Col span={12}>
+                        <Col span={10} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 5}}>
                             <Image height={500} width={250} src={portrait} />
                         </Col>
                     </Row>

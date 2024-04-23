@@ -19,9 +19,9 @@ const SiderMenu = () => {
 
     let menuItems = [
         getItem('主页', '1', <PieChartOutlined />),
-        getItem('表单', '2', <DesktopOutlined />),
+        getItem('输入', '2', <DesktopOutlined />),
         getItem('配置', 'sub1', <UserOutlined />, [
-            getItem('区块配置', '3'),
+            getItem('搜索', '3'),
             getItem('表单配置', '4'),
             getItem('场景', '5'),
         ]),
@@ -39,14 +39,12 @@ const SiderMenu = () => {
     };
 
     const onMenuItemClick = (e) => {
-        alert('click: ' + e.key);
-        console.log('click', e);
         if (e.key == 1) {
             window.location.href="/admin/index";
         } else if (e.key == 2) {
-            window.location.href="/admin/index";
-        } else if (e.key == 3) {
             window.location.href="/admin/input";
+        } else if (e.key == 3) {
+            window.location.href="/admin/search";
         } else if (e.key == 4) {
             window.location.href="/admin/search";
         } else if (e.key == 5) {
