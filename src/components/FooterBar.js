@@ -8,7 +8,7 @@ const FooterBar = () => {
     let footerStyle = {
         padding: 0,
         width: '100%',
-        border: '1px solid blue'
+        border: '0px solid blue'
     };
 
     return (
