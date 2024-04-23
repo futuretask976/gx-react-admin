@@ -22,6 +22,7 @@ const IndexTableBlock = () => {
     const showTitleModal = () => {
         setOpen(true);
     };
+
     const handleOk = () => {
         setLoading(true);
         setTimeout(() => {
@@ -29,6 +30,7 @@ const IndexTableBlock = () => {
           setOpen(false);
         }, 3000);
     };
+    
     const handleCancel = () => {
         setOpen(false);
     };
