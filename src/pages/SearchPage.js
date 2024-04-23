@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { DatePicker, Space, Button, Input, Layout, Flex, Col, Row, Tooltip } from 'antd';
+import { DatePicker, Button, Input, Layout, Flex, Col, Row } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
 import HeaderBar from '../components/HeaderBar'
@@ -8,10 +8,7 @@ import SiderMenu from '../components/SiderMenu'
 import BreadcrumbBlock from "../components/BreadcrumbBlock"
 import FooterBar from '../components/FooterBar'
 
-import ColumnChart from '../components/ColumnChart'
 import SearchTableBlock from '../components/SearchTableBlock'
-import IndexListBlock from '../components/IndexListBlock'
-import LineChart from '../components/LineChart'
 
 
 const { Content } = Layout;
@@ -27,17 +24,19 @@ const layoutStyle = {
 };
 
 const SearchPage = () => {
+    const [breadcrumbPath, setBreadcrumbPath] = useState(['主页', '搜索']);
+
     return (
         <Flex gap="middle" justify="center" wrap="wrap">
             <Layout style={layoutStyle}>
                 <HeaderBar />
-                <Layout style={{ borderRadius: 15, border: '0px solid blue' }}>
+                <Layout style={{ borderRadius: 0, border: '0px solid blue' }}>
                     <SiderMenu />
                     <Layout>
-                        <Content style={{ margin: '5px 5px', borderRadius: 15, border: '0px solid red' }}>
-                            <BreadcrumbBlock />
-                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>&nbsp;</Row>
-                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>
+                        <Content style={{ margin: '5px 5px', borderRadius: 0, border: '0px solid red' }}>
+                            <BreadcrumbBlock breadcrumbPath={breadcrumbPath} />
+                            <Row style={{backgroundColor: '#fff', borderRadius: 0, margin: '0px 0px'}}>&nbsp;</Row>
+                            <Row style={{backgroundColor: '#fff', borderRadius: 0, margin: '0px 0px'}}>
                                 <Col className="gutter-row" span={2}>
                                     <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>地址：</span></div>
                                 </Col>
@@ -63,8 +62,8 @@ const SearchPage = () => {
                                     <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><Input placeholder="是否选中" />&nbsp;&nbsp;</div>
                                 </Col>
                             </Row>
-                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>&nbsp;</Row>
-                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>
+                            <Row style={{backgroundColor: '#fff', borderRadius: 0, margin: '0px 0px'}}>&nbsp;</Row>
+                            <Row style={{backgroundColor: '#fff', borderRadius: 0, margin: '0px 0px'}}>
                                 <Col className="gutter-row" span={2}>
                                     <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><span>性别：</span></div>
                                 </Col>
@@ -78,12 +77,12 @@ const SearchPage = () => {
                                     <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%'}}><RangePicker />&nbsp;&nbsp;</div>
                                 </Col>
                             </Row>
-                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>
+                            <Row style={{backgroundColor: '#fff', borderRadius: 0, margin: '0px 0px'}}>
                                 <Col className="gutter-row" span={24}>
                                     <div style={{alignItems: 'center', backgroundColor: '#fff', display: 'flex', height: '100%', justifyContent: 'flex-end'}}><Button type="primary" icon={<SearchOutlined />}>Search</Button>&nbsp;&nbsp;</div>
                                 </Col>
                             </Row>
-                            <Row style={{backgroundColor: '#fff', borderRadius: 10, margin: '0px 0px'}}>&nbsp;</Row>
+                            <Row style={{backgroundColor: '#fff', borderRadius: 0, margin: '0px 0px'}}>&nbsp;</Row>
                             <div>&nbsp;</div>
                             <SearchTableBlock />
                         </Content>

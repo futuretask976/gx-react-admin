@@ -30,12 +30,12 @@ const SiderMenu = () => {
     ];
 
     let siderStyle = {
-        textAlign: 'left',
+        backgroundColor: '#ffffff',
         height: '100%',
         lineHeight: '240px',
-        color: '#fff',
-        backgroundColor: '#ffffff',
         paddingInline: 0,
+        textAlign: 'left',
+        border: '0px solid yellow'
     };
 
     const onMenuItemClick = (e) => {
@@ -59,7 +59,7 @@ const SiderMenu = () => {
     };
 
     return (
-        <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} style={siderStyle} width="200">
+        <Sider collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} style={siderStyle} width="200">
             {/* <div className="demo-logo-vertical" /> */}
             <Menu theme="light" defaultSelectedKeys={['1']} mode="inline" items={menuItems} onClick={onMenuItemClick} />
         </Sider>

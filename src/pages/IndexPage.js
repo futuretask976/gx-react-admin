@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Layout, Flex, Col, Row } from 'antd';
+import { Flex, Layout, Col, Row } from 'antd';
 
 import HeaderBar from '../components/HeaderBar'
 import SiderMenu from '../components/SiderMenu'
@@ -22,7 +22,9 @@ const layoutStyle = {
     justifyContent: 'center',
 };
 
-const IndexPage = () => {
+export default function IndexPage() {
+    const [breadcrumbPath, setBreadcrumbPath] = useState(['主页', '首页']);
+
     return (
         <Flex gap="middle" justify="center" wrap="wrap">
             <Layout style={layoutStyle}>
@@ -31,7 +33,7 @@ const IndexPage = () => {
                     <SiderMenu />
                     <Layout>
                         <Content style={{ margin: '5px 5px', borderRadius: 15, border: '1px solid red' }}>
-                            <BreadcrumbBlock />
+                            <BreadcrumbBlock breadcrumbPath={breadcrumbPath} />
                             <LineChart />
                             &nbsp;
                             <ColumnChart />
@@ -66,5 +68,3 @@ const IndexPage = () => {
         </Flex>
     )
 };
-
-export default IndexPage;

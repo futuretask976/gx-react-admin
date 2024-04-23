@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Layout, Flex, Col, Row } from 'antd';
 
 import HeaderBar from '../components/HeaderBar'
 import SiderMenu from '../components/SiderMenu'
-import InputBreadcrumbBlock from "../components/InputBreadcrumbBlock"
+import BreadcrumbBlock from "../components/BreadcrumbBlock"
 import FooterBar from '../components/FooterBar'
-
 import ColumnChart from '../components/ColumnChart'
 import IndexTableBlock from '../components/IndexTableBlock'
 import IndexListBlock from '../components/IndexListBlock'
@@ -23,15 +22,17 @@ const layoutStyle = {
 };
 
 const InputPage = () => {
+    const [breadcrumbPath, setBreadcrumbPath] = useState(['主页', '输入']);
+
     return (
         <Flex gap="middle" justify="center" wrap="wrap">
             <Layout style={layoutStyle}>
                 <HeaderBar />
-                <Layout style={{ borderRadius: 15, border: '1px solid blue' }}>
+                <Layout style={{ borderRadius: 15, border: '0px solid blue' }}>
                     <SiderMenu />
                     <Layout>
-                        <Content style={{ margin: '5px 5px', borderRadius: 15, border: '1px solid red' }}>
-                            <InputBreadcrumbBlock />
+                        <Content style={{ margin: '5px 5px', borderRadius: 15, border: '0px solid red' }}>
+                            <BreadcrumbBlock breadcrumbPath={breadcrumbPath} />
                             <LineChart />
                             &nbsp;
                             <ColumnChart />
