@@ -28,12 +28,12 @@ export default function IndexPage() {
 
     return (
         <Flex gap="middle" justify="center" wrap="wrap">
-            <Layout style={layoutStyle}> {/* 这里是对的 */}
+            <Layout style={layoutStyle}>
                 <HeaderBar />
-                <Layout style={{ borderRadius: 0, border: '0px solid red' }}> {/* 这里是对的 */}
+                <Layout style={{ borderRadius: 0, border: '0px solid red' }}>
                     <SiderMenu />
-                    <Layout style={{ borderRadius: 0, border: '0px solid yellow' }}> {/* 这里是对的 */}
-                        <Content style={{ margin: '0px 0px', borderRadius: 0, width: '100%', border: '0px solid green', padding: 5 }}> {/* 如果margin为0，那这里是对的，否则会有问题 */}
+                    <Layout style={{ borderRadius: 0, border: '0px solid yellow' }}>
+                        <Content style={{ margin: '0px 0px', borderRadius: 0, width: '100%', border: '0px solid green', padding: 5 }}>
                             <BreadcrumbBlock breadcrumbPath={breadcrumbPath} />
                             <LineChart />
                             &nbsp;

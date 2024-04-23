@@ -50,7 +50,7 @@ const LineChart = () => {
     };
 
     return (
-        <div id='lineChartContainer' style={{backgroundColor: '#fff', height: 200, width: '100%', border: '1px solid pink'}}> {/* 这里是对的 */}
+        <div id='lineChartContainer' style={{backgroundColor: '#fff', height: 200, width: '100%', border: '0px solid pink'}}>
             <Line width={lineChartWidth} {...config} />
         </div>
     )
