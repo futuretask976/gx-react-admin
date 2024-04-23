@@ -19,7 +19,7 @@ const HeaderBar = () => {
     return (
         <Header style={headerStyle}>
             {/* <Image height={170} src={logo} style={{}} /> */}
-            <div style={{alignItems: 'center', display: 'flex', flexDirection: 'row', height: 150, width: '100%', border: '1px solid yellow'}}>
+            <div style={{display: 'flex', alignItems: 'center', flexDirection: 'row', height: 150, width: '100%', border: '1px solid yellow'}}>
                 <div style={{border: '1px solid red'}}>
                     <Image height={120} src={logo} />
                 </div>
