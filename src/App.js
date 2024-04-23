@@ -5,6 +5,8 @@ import { Outlet, RouterProvider, Navigate, createBrowserRouter } from 'react-rou
 import IndexPage from './pages/IndexPage';
 import InputPage from './pages/InputPage';
 import SearchPage from './pages/SearchPage';
+import LoginPage from './pages/LoginPage';
+import LogoutPage from './pages/LogoutPage';
 
 const AuthContext = createContext();
 
@@ -65,6 +67,14 @@ const Routes = () => {
                 {
                     path: "/search",
                     element: <SearchPage />,
+                },
+                {
+                    path: "/login",
+                    element: <LoginPage />,
+                },
+                {
+                    path: "/logout",
+                    element: <LogoutPage />,
                 }
             ]
         }
