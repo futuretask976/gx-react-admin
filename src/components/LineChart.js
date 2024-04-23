@@ -1,8 +1,16 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-import { Line } from '@ant-design/charts';
+import { Line } from '@ant-design/plots';
 
 const LineChart = () => {
+    console.log("container: ", document.getElementById('lineChartContainer'));
+    console.log("container: ", document.documentElement.clientWidth);
+    // 假设容器的宽度为 500px
+    const containerWidth = document.documentElement.clientWidth;
+    // 假设你想要将线宽设置为容器宽度的 20%
+    const lineChartWidth = containerWidth * 0.75;
+
     let data = [
         { year: '1991', value: 3 },
         { year: '1992', value: 4 },
@@ -12,7 +20,7 @@ const LineChart = () => {
         { year: '1996', value: 6 },
         { year: '1997', value: 7 },
         { year: '1998', value: 9 },
-        { year: '1999', value: 13 },
+        { year: '1999', value: 13 }
     ];
     let config = {
         data,
@@ -30,10 +38,20 @@ const LineChart = () => {
         style: {
             lineWidth: 2,
         },
+        xAxis: {
+            line: {style: { stroke: '#0A122E' }},
+            label: {
+                style: {
+                    stroke: '#0A122E',
+                    fontWeight: 100,
+                }
+            }
+        }
     };
+
     return (
-        <div style={{backgroundColor: '#fff', height: 200}}>
-            <Line {...config} />
+        <div id='lineChartContainer' style={{backgroundColor: '#fff', height: 200, width: '100%', border: '1px solid pink'}}> {/* 这里是对的 */}
+            <Line width={lineChartWidth} {...config} />
         </div>
     )
 };
