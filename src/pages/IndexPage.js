@@ -24,6 +24,7 @@ const layoutStyle = {
 };
 
 export default function IndexPage() {
+    const [selectedMenu, setSelectedMenu] = useState(['1']);
     const [breadcrumbPath, setBreadcrumbPath] = useState(['主页', '首页']);
 
     return (
@@ -31,7 +32,7 @@ export default function IndexPage() {
             <Layout style={layoutStyle}>
                 <HeaderBar />
                 <Layout style={{ borderRadius: 0, border: '0px solid red' }}>
-                    <SiderMenu />
+                    <SiderMenu selectedMenu={selectedMenu} />
                     <Layout style={{ borderRadius: 0, border: '0px solid yellow' }}>
                         <Content style={{ margin: '0px 0px', borderRadius: 0, width: '100%', border: '0px solid green', padding: 5 }}>
                             <BreadcrumbBlock breadcrumbPath={breadcrumbPath} />

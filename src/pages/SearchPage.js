@@ -21,6 +21,7 @@ const layoutStyle = {
 };
 
 const SearchPage = () => {
+    const [selectedMenu, setSelectedMenu] = useState(['3']);
     const [breadcrumbPath, setBreadcrumbPath] = useState(['主页', '搜索']);
 
     return (
@@ -28,7 +29,7 @@ const SearchPage = () => {
             <Layout style={layoutStyle}>
                 <HeaderBar />
                 <Layout style={{ borderRadius: 0, border: '0px solid blue' }}>
-                    <SiderMenu />
+                    <SiderMenu selectedMenu={selectedMenu} />
                     <Layout>
                         <Content style={{ margin: '5px 5px', borderRadius: 0, border: '0px solid red' }}>
                             <BreadcrumbBlock breadcrumbPath={breadcrumbPath} />

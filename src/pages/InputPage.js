@@ -22,6 +22,7 @@ const layoutStyle = {
 };
 
 const InputPage = () => {
+    const [selectedMenu, setSelectedMenu] = useState(['2']);
     const [breadcrumbPath, setBreadcrumbPath] = useState(['主页', '输入']);
 
     return (
@@ -29,7 +30,7 @@ const InputPage = () => {
             <Layout style={layoutStyle}>
                 <HeaderBar />
                 <Layout style={{ borderRadius: 15, border: '0px solid blue' }}>
-                    <SiderMenu />
+                    <SiderMenu selectedMenu={selectedMenu} />
                     <Layout>
                         <Content style={{ margin: '5px 5px', borderRadius: 15, border: '0px solid red' }}>
                             <BreadcrumbBlock breadcrumbPath={breadcrumbPath} />

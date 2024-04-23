@@ -12,7 +12,9 @@ function getItem(label, key, icon, children) {
     };
 }
 
-const SiderMenu = () => {
+const SiderMenu = (props) => {
+    console.log('siderMenu: ', props.selectedMenu);
+
     const { Sider } = Layout;
 
     let [collapsed, setCollapsed] = useState(false);
@@ -61,7 +63,7 @@ const SiderMenu = () => {
     return (
         <Sider collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} style={siderStyle} width="200">
             {/* <div className="demo-logo-vertical" /> */}
-            <Menu theme="light" defaultSelectedKeys={['1']} mode="inline" items={menuItems} onClick={onMenuItemClick} />
+            <Menu theme="light" defaultSelectedKeys={props.selectedMenu} mode="inline" items={menuItems} onClick={onMenuItemClick} />
         </Sider>
     )
 };
