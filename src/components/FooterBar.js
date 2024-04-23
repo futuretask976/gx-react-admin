@@ -44,6 +44,7 @@ const FooterBar = () => {
                 </div>
             </div>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', padding: 10}}>
+                <hr style={{width: '100%', border: '0.5px solid gray'}}/>
                 <span>京网文﹝2023﹞4325-128号　互联网新闻信息服务许可编号：11220180001 北京新浪互联信息服务有限公司</span>
                 <span>互联网药品信息服务（京）-经营性-2019-0026　京教研[2002]7号　电信业务审批[2001]字</span>
                 <span>增值电信业务经营许可证B1.B2-20090108　增值电信业务经营许可证：京ICP证000007号</span>
