@@ -30,15 +30,15 @@ const HeaderBar = () => {
             </div>
             <div id='loginHeader' style={{display: 'flex', alignItems: 'center', justifyContent: 'center', width: '20%', border: '0px solid yellow'}}>
                 <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', height: 100, border: '0px solid pink'}}>
-                    <div style={{border: '0px solid pink', height: 80}}>
-                        <Image height={80}  src={loginHeader} />
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', border: '0px solid pink', height: '100%'}}>
+                        <Image height={70}  src={loginHeader} />
                     </div>
-                    
                 </div>
+                <div>&nbsp;</div>
                 <div style={{display: 'flex', flexDirection: 'column', height: 80, border: '0px solid green'}}>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', height: '33%', padding: 5}}>登录用户：广夏</div>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', height: '33%', padding: 5}}>用户角色：管理员</div>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', height: '33%', padding: 5, border: '0px solid black'}}>登出</div>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', height: '33%', padding: 2}}>登录用户：广夏</div>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', height: '33%', padding: 2}}>用户角色：管理员</div>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', height: '33%', padding: 2, border: '0px solid black'}}>登出</div>
                 </div>
             </div>
         </Header>
