@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { DesktopOutlined, FileOutlined, PieChartOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
 
+const { Sider } = Layout;
+
 function getItem(label, key, icon, children) {
     return {
         key,
@@ -13,11 +15,7 @@ function getItem(label, key, icon, children) {
 }
 
 const SiderMenu = (props) => {
-    console.log('siderMenu: ', props.selectedMenu);
-
-    const { Sider } = Layout;
-
-    let [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(false);
 
     let menuItems = [
         getItem('主页', '1', <PieChartOutlined />),

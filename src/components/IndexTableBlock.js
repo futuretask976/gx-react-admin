@@ -1,16 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { theme, Button, DatePicker, Grid, Image, Input, Modal, Space, Table, Tag, Tooltip, Col, Row } from 'antd';
+import axios from 'axios';
 
 import portrait from '../images/portrait.jpg'
 
 const { TextArea } = Input;
 
-const IndexTableBlock = () => {
-    const [loading, setLoading] = useState(false);
-    const [open, setOpen] = useState(false);
+function IndexTableBlock() {
+    const [machineData, setMachineData] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:8080/gxsp3demo/machine/list')
+            .then(response => {
+                let tmpData = [];
+                response.data.model.forEach((item, index) => {
+                    tmpData.push({
+                        key: index,
+                        id: item.id,
+                        machineCode: item.machineCode,
+                        machineName: item.machineName,
+                    });
+                });
+                setMachineData(tmpData);
+            })
+            .catch(error => {
+                console.error('Error fetching data: ', error.data);
+            });
+    }, []);
 
-    const onTitleClick = (e) => {
-        console.log('onTitleClick', e);
+    const [maCode, setMaCode] = useState();
+    const [maName, setMaName] = useState();
+    const onTitleClick = (record) => {
+        setMaCode(record.machineCode);
+        setMaName(record.machineName);
         showTitleModal();
     };
 
@@ -19,18 +40,20 @@ const IndexTableBlock = () => {
         console.log('onDeleteClick', e);
     };
 
+    const [open, setOpen] = useState(false);
     const showTitleModal = () => {
         setOpen(true);
     };
 
+    const [loading, setLoading] = useState(false);
     const handleOk = () => {
         setLoading(true);
         setTimeout(() => {
-          setLoading(false);
-          setOpen(false);
+            setLoading(false);
+            setOpen(false);
         }, 3000);
     };
-    
+
     const handleCancel = () => {
         setOpen(false);
     };
@@ -41,104 +64,42 @@ const IndexTableBlock = () => {
 
     let columns = [
         {
-            title: 'Name',
-            dataIndex: 'name',
-            key: 'name',
+            title: 'ID',
+            dataIndex: 'id',
+            key: 'id',
             render: (_, record) => (
-                <Button type='link' onClick={() => onTitleClick(record.name)}>{record.name}</Button>
+                <Button type='link' onClick={() => onTitleClick(record)}>{record.id}</Button>
             ),
         },
         {
-            title: 'Age',
-            dataIndex: 'age',
-            key: 'age',
+            title: '机器代码',
+            dataIndex: 'machineCode',
+            key: 'machineCode',
         },
         {
-            title: 'Address',
-            dataIndex: 'address',
-            key: 'address',
+            title: '机器名称',
+            dataIndex: 'machineName',
+            key: 'machineName',
         },
         {
-            title: 'Tags',
-            key: 'tags',
-            dataIndex: 'tags',
-            render: (_, { tags }) => (
-                <>
-                {tags.map((tag) => {
-                    let color = tag.length > 5 ? 'geekblue' : 'green';
-                    if (tag === 'loser') {
-                    color = 'volcano';
-                    }
-                    return (
-                    <Tag color={color} key={tag}>
-                        {tag.toUpperCase()}
-                    </Tag>
-                    );
-                })}
-                </>
-            ),
-        },
-        {
-            title: 'Action',
+            title: '动作',
             key: 'action',
             render: (_, record) => (
                 <Space size="middle">
-                    <a>Invite {record.name}</a>
-                    <a onClick={() => onDeleteClick(record.name)}>Delete</a>
+                    <a onClick={() => onDeleteClick(record.machineName)}>删除</a>
                 </Space>
             ),
         },
     ];
-    
-    let data = [
-        {
-            key: '1',
-            name: 'John Brown',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
-            tags: ['nice', 'developer'],
-        },
-        {
-            key: '2',
-            name: 'Jim Green',
-            age: 42,
-            address: 'London No. 1 Lake Park',
-            tags: ['loser'],
-        },
-        {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sydney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
-        },
-        {
-            key: '4',
-            name: 'Peter',
-            age: 32,
-            address: 'Sydney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
-        },
-        {
-            key: '5',
-            name: 'John',
-            age: 32,
-            address: 'Sydney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
-        },
-        {
-            key: '6',
-            name: 'Jack',
-            age: 32,
-            address: 'Sydney No. 1 Lake Park',
-            tags: ['cool', 'teacher'],
-        },
-    ];
+
+    if (!machineData) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <>
             <div style={{ padding: 24, minHeight: 500, background: colorBgContainer, borderRadius: borderRadiusLG }}>
-                <Table columns={columns} dataSource={data} />
+                <Table columns={columns} dataSource={machineData} />
             </div>
 
             <Modal
@@ -173,11 +134,11 @@ const IndexTableBlock = () => {
                             <div>
                                 <Row>
                                     <Col span={5} style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: 5}}>姓名：</Col>
-                                    <Col span={19} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 5}}><Input placeholder="姓名，例如文一西路西溪泊岸3幢731室" /></Col>
+                                    <Col span={19} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 5}}><Input placeholder="姓名，例如文一西路西溪泊岸3幢731室" value={maCode} /></Col>
                                 </Row>
                                 <Row>
                                     <Col span={5} style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: 5}}>性别：</Col>
-                                    <Col span={19} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 5}}><Input placeholder="性别，例如男或者女" /></Col>
+                                    <Col span={19} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 5}}><Input placeholder="性别，例如男或者女" value={maName} /></Col>
                                 </Row>
                                 <Row>
                                     <Col span={5} style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: 5}}>身高：</Col>
