@@ -1,7 +1,33 @@
 import React, { useState } from 'react';
+import { Button, Checkbox, Form, Input } from 'antd';
+import axios from 'axios';
 
-import { Button, Input } from 'antd';
+const onFinish = (values) => {
+    console.log('Success:', values);
+    let postData = 'username=' + values.username + "&password=" + values.password;
 
+    axios.post('http://localhost:8080/gxsp3demo/login-processing', postData, {
+        withCredentials: true
+    })
+        .then(response => {
+            console.log('response: ', response);
+            console.log('response.data: ', response.data);
+            console.log('response.data.loginSuccess: ', response.data.loginSuccess);
+            if (response && response.data && response.data.loginSuccess) {
+                console.log('prepare to locate');
+            } else {
+                alert('登录有问题');
+            }
+        })
+        .catch(error => {
+            console.error('error: ', error);
+            alert('登录失败');
+        });
+};
+
+const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+};
 
 const LoginPage = () => {
     return (
@@ -10,26 +36,19 @@ const LoginPage = () => {
                 用户登录
             </div>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', height: 205, width: '30%', border: '1px solid gray'}}>
-                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', height: 40, width: '100%', border: '0px solid green'}}>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-end', flexDirection: 'row', width: '18%'}}>用户名：</div>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', paddingRight: 5, width: '82%'}}><Input placeholder="用户名" /></div>
-                </div>
-                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', height: 40, width: '100%', border: '0px solid green'}}>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-end', flexDirection: 'row', width: '18%'}}>密码：</div>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', paddingRight: 5, width: '82%'}}><Input placeholder="密码" /></div>
-                </div>
-                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', height: 40, width: '100%', border: '0px solid green'}}>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-end', flexDirection: 'row', width: '18%'}}>手机号：</div>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', paddingRight: 5, width: '55%'}}><Input placeholder="手机号" /></div>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', paddingRight: 5, width: '27%'}}><Button type="primary">获取验证码</Button></div>
-                </div>
-                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', height: 40, width: '100%', border: '0px solid green'}}>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-end', flexDirection: 'row', width: '18%'}}>验证码：</div>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', paddingRight: 5, width: '82%'}}><Input placeholder="验证码" /></div>
-                </div>
-                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', height: 40, width: '100%', border: '0px solid green'}}>
-                    <Button type="primary">登录</Button>
-                </div>
+                <Form name="loginForm" initialValues={{remember: true}} onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete="off">
+                    <Form.Item label="用户名" style={{width: 300}} name="username" rules={[{required: true, message: '请输入你的用户名'}]}>
+                        <Input />
+                    </Form.Item>
+                    <Form.Item label="密&nbsp;&nbsp;&nbsp;&nbsp;码" style={{width: 300}} name="password" rules={[{required: true, message: 'Please input your password!'}]}>
+                        <Input.Password />
+                    </Form.Item>
+                    <Form.Item style={{width: 300, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <Button type="primary" htmlType="submit">
+                            登录
+                        </Button>
+                    </Form.Item>
+                </Form>
             </div>
         </div>
     )

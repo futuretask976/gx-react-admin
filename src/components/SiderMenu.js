@@ -17,7 +17,7 @@ function getItem(label, key, icon, children) {
 const SiderMenu = (props) => {
     const [collapsed, setCollapsed] = useState(false);
 
-    let menuItems = [
+    const menuItems = [
         getItem('主页', '1', <PieChartOutlined />),
         getItem('输入', '2', <DesktopOutlined />),
         getItem('配置', 'sub1', <UserOutlined />, [
@@ -29,7 +29,7 @@ const SiderMenu = (props) => {
         getItem('文件', '8', <FileOutlined />),
     ];
 
-    let siderStyle = {
+    const siderStyle = {
         backgroundColor: '#ffffff',
         height: '100%',
         lineHeight: '240px',

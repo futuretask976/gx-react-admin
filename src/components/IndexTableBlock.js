@@ -9,8 +9,11 @@ const { TextArea } = Input;
 function IndexTableBlock() {
     const [machineData, setMachineData] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:8080/gxsp3demo/machine/list')
+        axios.get('http://localhost:8080/gxsp3demo/machine/list', {
+            withCredentials: true // 这会让axios在请求中携带cookies
+        })
             .then(response => {
+                console.log("response: ", response);
                 let tmpData = [];
                 response.data.model.forEach((item, index) => {
                     tmpData.push({
@@ -23,7 +26,10 @@ function IndexTableBlock() {
                 setMachineData(tmpData);
             })
             .catch(error => {
-                console.error('Error fetching data: ', error.data);
+                console.error('Error fetching data: ', error);
+                if (error && error.response && error.response.status == 401) {
+                    // window.location.href="/admin/login";
+                }
             });
     }, []);
 
