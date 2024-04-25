@@ -21,11 +21,11 @@ const doLogout = () => {
             console.log('response.data.logoutSuccess: ', response.data.logoutSuccess);
             if (response && response.data && response.data.logoutSuccess == 'true') {
                 console.log('prepare to locate');
-                alert('prepare to locate');
                 // 清除本地存储的认证信息，如token等
                 localStorage.removeItem('JSESSIONID');
                 deleteCookie('JSESSIONID');
-                // window.location.href='/admin/login';
+                window.location.reload();
+                // history.go(0);
             } else {
                 alert('注销有问题');
             }

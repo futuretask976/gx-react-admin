@@ -30,7 +30,7 @@ function IndexTableBlock() {
                 // console.error('error.response: ', error.response);
                 // console.error('error.response.status: ', error.response.status);
                 if (error && error.response && error.response.status == 401) {
-                    // window.location.href="/admin/login";
+                    window.location.href="/admin/login";
                 }
             });
     }, []);
