@@ -26,7 +26,9 @@ function IndexTableBlock() {
                 setMachineData(tmpData);
             })
             .catch(error => {
-                console.error('Error fetching data: ', error);
+                // console.error('error: ', error);
+                // console.error('error.response: ', error.response);
+                // console.error('error.response.status: ', error.response.status);
                 if (error && error.response && error.response.status == 401) {
                     // window.location.href="/admin/login";
                 }

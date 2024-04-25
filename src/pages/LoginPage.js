@@ -13,7 +13,7 @@ const onFinish = (values) => {
             console.log('response: ', response);
             console.log('response.data: ', response.data);
             console.log('response.data.loginSuccess: ', response.data.loginSuccess);
-            if (response && response.data && response.data.loginSuccess) {
+            if (response && response.data && response.data.loginSuccess == 'true') {
                 console.log('prepare to locate');
                 window.location.href='/admin/index';
             } else {
