@@ -9,7 +9,7 @@ const { TextArea } = Input;
 function IndexTableBlock() {
     const [machineData, setMachineData] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:8080/gxsp3demo/machine/list', {
+        axios.get('/gxsp3demo/machine/list', {
             withCredentials: true // 这会让axios在请求中携带cookies
         })
             .then(response => {
@@ -30,7 +30,7 @@ function IndexTableBlock() {
                 // console.error('error.response: ', error.response);
                 // console.error('error.response.status: ', error.response.status);
                 if (error && error.response && error.response.status == 401) {
-                    window.location.href="/admin/login";
+                    window.location.href="/gxadmindemo/login";
                 }
             });
     }, []);

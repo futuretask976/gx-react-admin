@@ -6,7 +6,7 @@ const onFinish = (values) => {
     console.log('Success:', values);
     let postData = 'username=' + values.username + "&password=" + values.password;
 
-    axios.post('http://localhost:8080/gxsp3demo/login-processing', postData, {
+    axios.post('/gxsp3demo/login-processing', postData, {
         withCredentials: true // 这会让axios在请求中携带cookies
     })
         .then(response => {
@@ -15,7 +15,7 @@ const onFinish = (values) => {
             console.log('response.data.loginSuccess: ', response.data.loginSuccess);
             if (response && response.data && response.data.loginSuccess == 'true') {
                 console.log('prepare to locate');
-                window.location.href='/admin/index';
+                window.location.href='/gxadmindemo/index';
             } else {
                 alert('登录有问题');
             }

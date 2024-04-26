@@ -57,6 +57,10 @@ const Routes = () => {
             element: <PublicRoute />, // Wrap the component in AuthenticatedOnlyRoute
             children: [
                 {
+                    path: "/",
+                    element: <IndexPage />,
+                },
+                {
                     path: "/index",
                     element: <IndexPage />,
                 },
@@ -94,7 +98,7 @@ const Routes = () => {
         ...routesForAuthenticatedOnly,
     ],
     {
-        basename: "/admin"
+        basename: "/gxadmindemo"
     });
    
     return <RouterProvider router={router} />;

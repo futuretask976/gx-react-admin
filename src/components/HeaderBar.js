@@ -12,7 +12,7 @@ const deleteCookie = (name) => {
 
 const doLogout = () => {
     alert('要注销啦');
-    axios.get('http://localhost:8080/gxsp3demo/logout', {
+    axios.get('/gxsp3demo/logout', {
         withCredentials: true // 这会让axios在请求中携带cookies
     })
         .then(response => {
