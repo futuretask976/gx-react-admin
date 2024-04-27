@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
+import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { DesktopOutlined, FileOutlined, PieChartOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
 
@@ -39,21 +38,21 @@ const SiderMenu = (props) => {
     };
 
     const onMenuItemClick = (e) => {
-        if (e.key == 1) {
+        if (e.key === 1) {
             window.location.href="/admin/index";
-        } else if (e.key == 2) {
+        } else if (e.key === 2) {
             window.location.href="/admin/input";
-        } else if (e.key == 3) {
+        } else if (e.key === 3) {
             window.location.href="/admin/search";
-        } else if (e.key == 4) {
+        } else if (e.key === 4) {
             window.location.href="/admin/search";
-        } else if (e.key == 5) {
+        } else if (e.key === 5) {
             window.location.href="/admin/input";
-        } else if (e.key == 6) {
+        } else if (e.key === 6) {
             window.location.href="/admin/input";
-        } else if (e.key == 7) {
+        } else if (e.key === 7) {
             window.location.href="/admin/input";
-        } else if (e.key == 8) {
+        } else if (e.key === 8) {
             window.location.href="/admin/input";
         }
     };

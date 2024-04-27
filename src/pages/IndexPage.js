@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Flex, Layout, Col, Row } from 'antd';
 
 import HeaderBar from '../components/HeaderBar'
@@ -23,8 +23,8 @@ const layoutStyle = {
 };
 
 export default function IndexPage() {
-    const [selectedMenu, setSelectedMenu] = useState(['1']);
-    const [breadcrumbPath, setBreadcrumbPath] = useState(['主页', '首页']);
+    const selectedMenu = ['1'];
+    const breadcrumbPath = ['主页', '首页'];
 
     return (
         <Flex gap="middle" justify="center" wrap="wrap">

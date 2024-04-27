@@ -58,7 +58,7 @@ const Routes = () => {
             children: [
                 {
                     path: "/",
-                    element: <IndexPage />,
+                    element: <Navigate to="/index" />,
                 },
                 {
                     path: "/index",
@@ -98,7 +98,7 @@ const Routes = () => {
         ...routesForAuthenticatedOnly,
     ],
     {
-        basename: "/gxadmindemo"
+        basename: "/gxadmin"
     });
    
     return <RouterProvider router={router} />;
@@ -120,7 +120,7 @@ const AuthenticatedOnlyRoute = () => {
     // 判断用户是否有登录
     if (!token) {
       // 如果没有登录，则跳转到登录页面
-      return <Navigate to="/profile" />;
+      return <Navigate to="/login" />;
     }
   
     // 如果已经登录，则直接渲染目标组件

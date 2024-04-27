@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { theme, Space, Table, Tag } from 'antd';
 

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Button, Checkbox, Form, Input } from 'antd';
+import React from 'react';
+import { Button, Form, Input } from 'antd';
 import axios from 'axios';
 
 const onFinish = (values) => {
@@ -13,7 +13,7 @@ const onFinish = (values) => {
             console.log('response: ', response);
             console.log('response.data: ', response.data);
             console.log('response.data.loginSuccess: ', response.data.loginSuccess);
-            if (response && response.data && response.data.loginSuccess == 'true') {
+            if (response && response.data && response.data.loginSuccess === 'true') {
                 console.log('prepare to locate');
                 window.location.href='/gxadmindemo/index';
             } else {
@@ -30,7 +30,7 @@ const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
 };
 
-const LoginPage = () => {
+function LoginPage() {
     return (
         <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', height: 600, width: '100%', border: '0px solid gray'}}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'gray', height: 30, color: 'white', width: '30%', border: '1px solid gray'}}>

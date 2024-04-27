@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
-
-import { Button, Input } from 'antd';
-
+import React  from 'react';
 
 const LogoutPage = () => {
     return (
@@ -11,7 +8,7 @@ const LogoutPage = () => {
             </div>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', height: 45, width: '30%', border: '1px solid gray'}}>
                 <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', height: 40, width: '100%', border: '0px solid green'}}>
-                    <a href='/admin/index'>返回首页</a>
+                    <a href='/gxadmin/index'>返回首页</a>
                 </div>
             </div>
         </div>

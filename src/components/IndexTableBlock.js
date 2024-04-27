@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { theme, Button, DatePicker, Grid, Image, Input, Modal, Space, Table, Tag, Tooltip, Col, Row } from 'antd';
+import { theme, Button, Image, Input, Modal, Space, Table, Col, Row } from 'antd';
 import axios from 'axios';
 
 import portrait from '../images/portrait.jpg'
@@ -29,8 +29,8 @@ function IndexTableBlock() {
                 // console.error('error: ', error);
                 // console.error('error.response: ', error.response);
                 // console.error('error.response.status: ', error.response.status);
-                if (error && error.response && error.response.status == 401) {
-                    window.location.href="/gxadmindemo/login";
+                if (error && error.response && error.response.status === 401) {
+                    // window.location.href="/gxadmin/login";
                 }
             });
     }, []);

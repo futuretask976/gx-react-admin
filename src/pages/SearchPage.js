@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import { DatePicker, Button, Input, Layout, Flex, Col, Row } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
@@ -21,8 +20,8 @@ const layoutStyle = {
 };
 
 const SearchPage = () => {
-    const [selectedMenu, setSelectedMenu] = useState(['3']);
-    const [breadcrumbPath, setBreadcrumbPath] = useState(['主页', '搜索']);
+    const selectedMenu = ['3'];
+    const breadcrumbPath = ['主页', '搜索'];
 
     return (
         <Flex gap="middle" justify="center" wrap="wrap">

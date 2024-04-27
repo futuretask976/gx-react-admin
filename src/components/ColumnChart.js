@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { Column } from '@ant-design/plots';
 import { forEach, groupBy } from 'lodash-es';
 
@@ -26,18 +25,15 @@ const ColumnChart = () => {
             type: 'text',
             data: [k, value],
             style: {
-            textAlign: 'center',
-            fontSize: 14,
-            fill: 'rgba(0,0,0,0.85)',
+                textAlign: 'center',
+                fontSize: 14,
+                fill: 'rgba(0,0,0,0.85)',
+                text: `${value}`,
+                textBaseline: 'bottom',
+                position: 'top',
             },
             xField: 'year',
             yField: 'value',
-            style: {
-            text: `${value}`,
-            textBaseline: 'bottom',
-            position: 'top',
-            textAlign: 'center',
-            },
             tooltip: false,
         });
     });

@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import { Layout, Flex, Col, Row } from 'antd';
 
 import HeaderBar from '../components/HeaderBar'
@@ -22,8 +21,8 @@ const layoutStyle = {
 };
 
 const InputPage = () => {
-    const [selectedMenu, setSelectedMenu] = useState(['2']);
-    const [breadcrumbPath, setBreadcrumbPath] = useState(['主页', '输入']);
+    const selectedMenu = ['2'];
+    const breadcrumbPath = ['主页', '输入'];
 
     return (
         <Flex gap="middle" justify="center" wrap="wrap">
