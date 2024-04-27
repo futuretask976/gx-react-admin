@@ -15,7 +15,7 @@ const onFinish = (values) => {
             console.log('response.data.loginSuccess: ', response.data.loginSuccess);
             if (response && response.data && response.data.loginSuccess === 'true') {
                 console.log('prepare to locate');
-                window.location.href='/gxadmindemo/index';
+                window.location.href='/gxadmin/index';
             } else {
                 alert('登录有问题');
             }
